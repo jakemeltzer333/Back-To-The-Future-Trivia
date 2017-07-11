@@ -8,6 +8,7 @@ The title is fairly self-explanatory: create a trivia game consisting of 20 mult
 ## Wireframe
 
 (Your wireframes go here. Preferably two or more)
+![Welcome Screen & Question Screen](./projectwireframes/IMG_0794.JPG)
 
 ## Initial thoughts on game structure
 
