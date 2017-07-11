@@ -17,6 +17,8 @@ The key element of logic I need to figure to make the majority of make game run 
 
 Another challenge I expect to face is counting correct and incorrect answers and submitting an output after a players answers all 20 questions. This output would appear on a screen after you answer every question. I also want to make it so that if a player answers, for example, between 17 and 20 questions right, a picture of a character will come up with an encouraging comment. I want to set the tiers for every 4 questions, so if you answer 0-4 questions right, 5-8, 9-12, 13-16, and 17-20, a different screen will pop up with different picture and text. 
 
+I also am scared of figuring out how to start the game over again. I struggled mightily with that in tic-tac-toe, so I have to figure out how to do that here.
+
 ## Phases of Completion
 
 (The steps or phases you expect to go through, and the tasks that you'll need to accomplish to reach each step. These should resemble the acceptance criteria we were working through earlier.)
