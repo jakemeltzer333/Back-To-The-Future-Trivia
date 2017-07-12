@@ -101,7 +101,7 @@ function setGame () {
     let $nextButton = $('<button>');
     $nextButton.attr('id', 'next');
     $nextButton.html('Next Question');
-
+    $nextButton.on('click', nextQuestion);
 
     $questionDiv.appendTo('#container');
     $answerDiv.appendTo('#container');
@@ -114,18 +114,18 @@ function setGame () {
     createQuestions();
     createAnswers();
   }
-function increment (i) {
+function increment (questionCounter) {
   console.log('increment');
-  return i + 1;
+  return questionCounter + 1;
 }
 /*
-Want to create event listener for 'next question' button that will return the
+Want to create event listener for 'next question' button that will increment questionCounter the
 next question and answers in the array 'questions' when clicked. createQuestions
 and createAnswers should be called on this event listener.
 */
 function createQuestions () {
   console.log('questions created');
-  let q = 0;
+  let q = questionCounter;
   $('#question').text(questions[q].question);
 
 }
@@ -140,7 +140,14 @@ function createQuestions () {
     }
   }
 
+function updateAnswers () {
+  let a = questionCounter;
+  for (let i = 0; i < questions[a].choices.length; i++) {
+       $(`#answer${i}`).text(questions[a].choices[i]);
 
+    }
+
+  }
 
 //when I click start button, title screen hides and question page forms
 function clickStart () {
@@ -148,9 +155,12 @@ function clickStart () {
    setGame();
     }
 
-function displayCorrect () {
+function nextQuestion () {
 
+     questionCounter++;
+    createQuestions();
+    updateAnswers();
 
-    }
+  }
 
 });
