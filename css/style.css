@@ -29,3 +29,7 @@
   top: 3px;
   left: 5px;
 }
+
+ol {
+  list-style: upper-alpha;
+}

@@ -1,7 +1,7 @@
 $(function () {
   console.log('main.js running well');
 
-const $questions = [
+const questions = [
   {
     question: 'What is the name of the town that the series takes place in?',
     choices: ['Sun Valley', 'Green Valley', 'Hill Valley', 'Silicon Valley'],
@@ -85,39 +85,70 @@ const $questions = [
   }
 ];
 
-let $score = 0; //score player has at any point through the game
-let $questionCounter = 0; //tracks question number
+let score = 0; //score player has at any point through the game
+let questionCounter = 0; //tracks question number
 let $screen = $('.title-screen');
 $('.start').click(clickStart);
 //create question screen
 function setGame () {
-  console.log('setting game');
-  let $questionDiv = $('<div>');
-  $questionDiv.attr('id', 'question');
-  let $answerDiv = $('<div>');
-  $answerDiv.attr('id', 'answers');
-  let $answerList = $('<ol>');
-  $answerList.attr('id', 'answer-list');
-  let $nextButton = $('<button>');
-  $nextButton.attr('id', 'next');
+    console.log('setting game');
+    let $questionDiv = $('<div>');
+    $questionDiv.attr('id', 'question');
+    let $answerDiv = $('<div>');
+    $answerDiv.attr('id', 'answers');
+    let $answerList = $('<ol>');
+    $answerList.attr('id', 'answer-list');
+    let $nextButton = $('<button>');
+    $nextButton.attr('id', 'next');
+    $nextButton.html('Next Question');
 
-  $questionDiv.appendTo('#container');
-  $answerDiv.appendTo('#container');
-  $nextButton.appendTo('#container');
-  $answerList.appendTo('#answers');
 
-  $nextButton.text('Next Question');
+    $questionDiv.appendTo('#container');
+    $answerDiv.appendTo('#container');
+    $nextButton.appendTo('#container');
+    $answerList.appendTo('#answers');
+
+
+
+
+    createQuestions();
+    createAnswers();
+  }
+function increment (i) {
+  console.log('increment');
+  return i + 1;
 }
+/*
+Want to create event listener for 'next question' button that will return the
+next question and answers in the array 'questions' when clicked. createQuestions
+and createAnswers should be called on this event listener.
+*/
+function createQuestions () {
+  console.log('questions created');
+  let q = 0;
+  $('#question').text(questions[q].question);
+
+}
+
+ function createAnswers () {
+  console.log('answers created');
+   let a = questionCounter;
+  //$('#answers').text(questions[a].choices);
+  for (let i = 0; i < questions[a].choices.length; i++) {
+      let $answer = $('<li>', {id: `answer${i}`}).text(questions[a].choices[i]);
+      $answer.appendTo('ol');
+    }
+  }
+
+
+
 //when I click start button, title screen hides and question page forms
 function clickStart () {
   $screen.css('display', 'none');
    setGame();
     }
 
-
-
-
-function displayNext () {
+function displayCorrect () {
 
 
     }
