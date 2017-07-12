@@ -33,3 +33,7 @@
 ol {
   list-style: upper-alpha;
 }
+
+li:hover {
+  background-color: blue;
+}
