@@ -73,3 +73,9 @@ button {
   left: 600px;
   background-color: #DB1818;
 }
+
+.see-results {
+  position: relative;
+  top: 3px;
+  left: 5px;
+}

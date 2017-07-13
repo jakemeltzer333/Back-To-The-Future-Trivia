@@ -128,7 +128,7 @@ $('#next').prop('disabled', true);
     let $answer = $('li');
     $answer.on('click', correctAnswers);
     let q = questionCounter;
-    if (q === questions.length - 1) {
+    if (q === questions.length) {
       console.log('button removed');
 
       let $resultButton = $('#next');
@@ -141,13 +141,13 @@ function createQuestions () {
   console.log('questions created');
   let q = questionCounter;
   //$('#question').text(questions[q].question);
-  if (q === questions.length - 1) {
+  if (q === questions.length) {
       console.log('button removed');
 
       let $resultButton = $('#next');
       $resultButton.attr('id', 'result-button');
       $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
-
+      $resultButton.click(clickResults);
     } else {
       $('#question').text(questions[q].question);
     }
@@ -182,7 +182,7 @@ function correctAnswers () {
         console.log('great scott!');
         let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($greatScott);
-        //score++;
+        score++;
       } else {
         let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($helloMcfly);
@@ -206,5 +206,27 @@ function nextQuestion () {
     $('#next').prop('disabled', true);
 
   }
+
+function clickResults () {
+  let q = questionCounter;
+  if (q === questions.length) {
+    //$('#result-button').click(setLastPage);
+    $screen.css('display', 'none');
+  }
+}
+
+function setLastPage () {
+  console.log('set last page');
+  let $scoreDiv = $('<div>');
+  $scoreDiv.attr('id', 'score');
+  let $playAgain = $('<button>');
+  $playAgain.attr('id', 'play-again');
+  $playAgain.html('<img class = restart src="https://fontmeme.com/permalink/170713/0c99cb2ab6a14abefe2ca0a51c83084d.png" alt="back-to-the-future-font" border="0">')
+
+  $scoreDiv.appendTo('#container');
+  $playAgain.appendTo('#container');
+
+  //clickResults();
+}
 
 });
