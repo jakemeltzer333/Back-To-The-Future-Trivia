@@ -37,3 +37,13 @@ ol {
 li:hover {
   background-color: blue;
 }
+
+#next {
+  background-color: #DB1818;
+}
+
+.forward {
+  position: relative;
+  top: 4px;
+  left: 5px;
+}

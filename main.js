@@ -88,7 +88,7 @@ const questions = [
 let score = 0; //score player has at any point through the game
 let questionCounter = 0; //tracks question number
 let $screen = $('.title-screen');
-let answer = '';
+//let answer = '';
 $('.start').click(clickStart);
 //create question screen
 function setGame () {
@@ -103,7 +103,7 @@ function setGame () {
     let $answerDisplay = $('<span>');
     $answerDisplay.attr('id', 'answer-display');
     $nextButton.attr('id', 'next');
-    $nextButton.html('Next Question');
+    $nextButton.html('<img class = "forward" src="https://fontmeme.com/permalink/170713/bff1cef89969b680f10fdcc0595fa88e.png" alt="back-to-the-future-font" border="0">');
     $nextButton.on('click', nextQuestion);
 
     $questionDiv.appendTo('#container');
@@ -113,9 +113,8 @@ function setGame () {
     $answerDisplay.appendTo('#container');
 
 
-//Allow '#next' button to be disabled until an answer is clicked and then
-//Re-enabled as soon as an answer is clicked.
-//following from: https://stackoverflow.com/questions/16777003/what-is-the-easiest-way-to-disable-enable-buttons-and-links-jquery-bootstrap
+//Allow '#next' button to be disabled until an answer is clicked
+
 $('#next').prop('disabled', true);
 
 
@@ -123,39 +122,36 @@ $('#next').prop('disabled', true);
     createAnswers();
     clickAnswers();
   }
-
+//allow individual answers to be clicked
   function clickAnswers () {
     console.log('click answer');
     let $answer = $('li');
     $answer.on('click', correctAnswers);
   }
 
-function increment (questionCounter) {
-  console.log('increment');
-  return questionCounter + 1;
-}
-/*
-Want to create event listener for 'next question' button that will increment questionCounter the
-next question and answers in the array 'questions' when clicked. createQuestions
-and createAnswers should be called on this event listener.
-*/
+//displays a new question every time previous question is answered
 function createQuestions () {
   console.log('questions created');
   let q = questionCounter;
   $('#question').text(questions[q].question);
-
+  if (q === questions.length - 1) {
+      console.log('button removed');
+      //$('#next').remove();
+    } else {
+      $('#question').text(questions[q].question);
+    }
 }
-
+//displays new answers on the game screen
  function createAnswers () {
   console.log('answers created');
    let a = questionCounter;
-  //$('#answers').text(questions[a].choices);
   for (let i = 0; i < questions[a].choices.length; i++) {
       let $answer = $('<li>', {id: `answer${i}`}).text(questions[a].choices[i]);
       $answer.appendTo('ol');
     }
   }
-
+//changes the answers to the corresponding question
+//every time the previous question is answered
 function updateAnswers () {
   let a = questionCounter;
   for (let i = 0; i < questions[a].choices.length; i++) {
@@ -166,8 +162,8 @@ function updateAnswers () {
   }
 //For every correctAnswer in the questions array, click on the li that
 //corresponds to correctAnswer and displays that it's correct when clicked.
+//After answer is clicked, re-enable "Next Question" button.
 function correctAnswers () {
-  //$('#answer-list li').click(function() {
   let txt = $(this).text();
   console.log(txt);
   let a = questionCounter;
@@ -175,7 +171,7 @@ function correctAnswers () {
         console.log('great scott!');
         let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($greatScott);
-        score++;
+        //score++;
       } else {
         let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($helloMcfly);
@@ -183,17 +179,13 @@ function correctAnswers () {
     $('#next').prop('disabled', false);
 };
 
-
-
-
-
-
 //when I click start button, title screen hides and question page forms
 function clickStart () {
   $screen.css('display', 'none');
    setGame();
     }
-
+//enables the next question button when an answer is clicked
+//then after that button is clicked, creates new questions and answers
 function nextQuestion () {
 
     questionCounter++;
@@ -201,9 +193,6 @@ function nextQuestion () {
     updateAnswers();
     $('#answer-display').text('');
     $('#next').prop('disabled', true);
-    if (questionCounter === questions.length) {
-      $('#next').remove();
-    }
 
   }
 
