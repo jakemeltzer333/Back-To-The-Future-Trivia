@@ -53,7 +53,7 @@ const questions = [
   }, {
     question: 'What is the title of the sports almanac that is crucial to the entire plot of the second film?',
     choices: ['Gray\'s Sports Almanac', 'Gordon\'s Sports Almanac', 'Green\'s Sports Almanac', 'Gold\'s Sports Almanac'],
-    correctAnswer: 'Grays Sports Almanac'
+    correctAnswer: 'Gray\'s Sports Almanac'
   }, {
     question: 'What year do Marty and Doc travel to in Back to the Future 3?',
     choices: ['1865', '1875', '1885', '1905'],
@@ -100,6 +100,8 @@ function setGame () {
     let $answerList = $('<ol>');
     $answerList.attr('id', 'answer-list');
     let $nextButton = $('<button>');
+    let $answerDisplay = $('<span>');
+    $answerDisplay.attr('id', 'answer-display');
     $nextButton.attr('id', 'next');
     $nextButton.html('Next Question');
     $nextButton.on('click', nextQuestion);
@@ -108,12 +110,13 @@ function setGame () {
     $answerDiv.appendTo('#container');
     $nextButton.appendTo('#container');
     $answerList.appendTo('#answers');
+    $answerDisplay.appendTo('#container');
 
 
 //Allow '#next' button to be disabled until an answer is clicked and then
 //Re-enabled as soon as an answer is clicked.
 //following from: https://stackoverflow.com/questions/16777003/what-is-the-easiest-way-to-disable-enable-buttons-and-links-jquery-bootstrap
-//$('#next').prop('disabled', true);
+$('#next').prop('disabled', true);
 
 
     createQuestions();
@@ -170,8 +173,14 @@ function correctAnswers () {
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
         console.log('great scott!');
+        let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
+        $('#answer-display').html($greatScott);
         score++;
+      } else {
+        let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
+        $('#answer-display').html($helloMcfly);
       }
+    $('#next').prop('disabled', false);
 };
 
 
@@ -187,9 +196,14 @@ function clickStart () {
 
 function nextQuestion () {
 
-     questionCounter++;
+    questionCounter++;
     createQuestions();
     updateAnswers();
+    $('#answer-display').text('');
+    $('#next').prop('disabled', true);
+    if (questionCounter === questions.length) {
+      $('#next').remove();
+    }
 
   }
 
