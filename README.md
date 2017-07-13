@@ -1,22 +1,26 @@
 # Back-To-The-Future-Trivia
 20 Questions of Back To The Future Trivia from all 3 films.
 
-[Name of Game]
+## Back to The Future Trivia
 
 [screenshot]
 
-What is [name of game]?
+## What is Back To The Future Trivia?
 
-Brief discussion of what the game is and why you chose to make it
-Technical Discussion
+The title is fairly self-explanatory: create a trivia game consisting of 20 multiple choice questions of varying difficulty from all three films in the Back to the Future trilogy. I'm choosing to make it because I am a massive movie geek, I love these films, and since my GA WDI cohort is called 'DeLorean,' I wanted to pay tribute by creating a game that combined my passion for film with this course.
 
-List of the technologies you're using (HTML, CSS, JavaScript)
-Notes on Game Structure
+## Technical Discussion
 
-Code samples, description of challenges you overcame, etc.
-The Making of [Your Game]
+## List of the technologies you're using (HTML, CSS, JavaScript)
 
-Any credits or notes you feel you should add
-Opportunities for Future Growth
+## Notes on Game Structure
 
-If you had more time to work on your game, what would you do?
+## Code samples, description of challenges you overcame, etc.
+
+## The Making of Back To The Future Trivia
+
+## Any credits or notes you feel you should add
+
+##Opportunities for Future Growth
+
+##If you had more time to work on your game, what would you do?
