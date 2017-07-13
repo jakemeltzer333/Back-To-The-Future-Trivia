@@ -88,6 +88,7 @@ const questions = [
 let score = 0; //score player has at any point through the game
 let questionCounter = 0; //tracks question number
 let $screen = $('.title-screen');
+let answer = '';
 $('.start').click(clickStart);
 //create question screen
 function setGame () {
@@ -109,11 +110,23 @@ function setGame () {
     $answerList.appendTo('#answers');
 
 
+//Allow '#next' button to be disabled until an answer is clicked and then
+//Re-enabled as soon as an answer is clicked.
+//following from: https://stackoverflow.com/questions/16777003/what-is-the-easiest-way-to-disable-enable-buttons-and-links-jquery-bootstrap
+//$('#next').prop('disabled', true);
 
 
     createQuestions();
     createAnswers();
+    clickAnswers();
   }
+
+  function clickAnswers () {
+    console.log('click answer');
+    let $answer = $('li');
+    $answer.on('click', correctAnswers);
+  }
+
 function increment (questionCounter) {
   console.log('increment');
   return questionCounter + 1;
@@ -148,6 +161,23 @@ function updateAnswers () {
     }
 
   }
+//For every correctAnswer in the questions array, click on the li that
+//corresponds to correctAnswer and displays that it's correct when clicked.
+function correctAnswers () {
+  //$('#answer-list li').click(function() {
+  let txt = $(this).text();
+  console.log(txt);
+  let a = questionCounter;
+      if (txt === questions[a].correctAnswer) {
+        console.log('great scott!');
+        score++;
+      }
+};
+
+
+
+
+
 
 //when I click start button, title screen hides and question page forms
 function clickStart () {
