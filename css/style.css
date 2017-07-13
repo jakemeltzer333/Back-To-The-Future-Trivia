@@ -35,15 +35,41 @@ ol {
 }
 
 li:hover {
-  background-color: blue;
-}
-
-#next {
-  background-color: #DB1818;
+  background-color: #231ED6;
 }
 
 .forward {
   position: relative;
   top: 4px;
   left: 5px;
+}
+
+#question {
+  background-color: #DB1818;
+  color: #231ED6;
+  font-size: 50px;
+  font-family: 'Bangers', cursive;
+  position: relative;
+  left: 200px;
+}
+
+#answer-list {
+  font-family: 'Bangers', cursive;
+  font-size: 50px;
+  color: #DB1818;
+  position: relative;
+  left: 500px;
+}
+
+#answer-display {
+  display: block;
+  padding: 20px;
+  position: relative;
+  left: 300px;
+}
+
+button {
+  position: relative;
+  left: 600px;
+  background-color: #DB1818;
 }

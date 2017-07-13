@@ -19,7 +19,7 @@ const questions = [
     choices: ['88 mph', '75 mph', '100 mph', '200 mph'],
     correctAnswer: '88 mph'
   }, {
-    question: 'What is the name of Doc’s dog?',
+    question: 'What is the name of Doc’s dog in 1985?',
     choices: ['Galileo', 'Einstein', 'Hawking', 'Copernicus'],
     correctAnswer: 'Einstein'
   }, {
@@ -127,16 +127,27 @@ $('#next').prop('disabled', true);
     console.log('click answer');
     let $answer = $('li');
     $answer.on('click', correctAnswers);
-  }
+    let q = questionCounter;
+    if (q === questions.length - 1) {
+      console.log('button removed');
 
+      let $resultButton = $('#next');
+      $resultButton.attr('id', 'result-button');
+      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
+    }
+   }
 //displays a new question every time previous question is answered
 function createQuestions () {
   console.log('questions created');
   let q = questionCounter;
-  $('#question').text(questions[q].question);
+  //$('#question').text(questions[q].question);
   if (q === questions.length - 1) {
       console.log('button removed');
-      //$('#next').remove();
+
+      let $resultButton = $('#next');
+      $resultButton.attr('id', 'result-button');
+      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
+
     } else {
       $('#question').text(questions[q].question);
     }
