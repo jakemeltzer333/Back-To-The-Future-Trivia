@@ -1,6 +1,6 @@
 $(function () {
   console.log('main.js running well');
-
+  loadTitle();
 const questions = [
   {
     question: 'What is the name of the town that the series takes place in?',
@@ -89,6 +89,33 @@ let score = 0; //score player has at any point through the game
 let questionCounter = 0; //tracks question number
 let $screen = $('.title-screen');
 
+//load title screen when the page loads
+function loadTitle () {
+  console.log('title screen loaded');
+  let $container = $('<div>');
+  $container.attr('id', 'container');
+  $container.appendTo('body');
+  let $titleScreen = $('<div>');
+  $titleScreen.addClass('title-screen');
+  $titleScreen.appendTo('#container');
+  let $header = $('<header>');
+  $header.addClass('header');
+  $header.appendTo('.title-screen');
+  let $subhead = $('<h2>');
+  $subhead.addClass('subhead');
+  $subhead.appendTo('.title-screen');
+  let $poster = $('<img id = "poster">');
+  $poster.appendTo('.title-screen');
+  let $footer = $('<footer>');
+  $footer.appendTo('.title-screen');
+  let $start = $('<button>');
+  $start.addClass('start');
+  $start.appendTo('footer');
+  let $buttonImage = $('<img>', {class: 'start-button'});
+  $buttonImage.appendTo('.start');
+
+}
+
 
 $('.start').click(clickStart);
 //when I click start button, title screen hides and question page forms
@@ -161,11 +188,6 @@ function createQuestions () {
 function correctAnswers () {
   let txt = $(this).text();
   let q = questions[questionCounter].question
-  let obj = {
-    quest: q,
-    resp: txt
-  }
-  userAnswers.push(obj);
   console.log(txt);
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
@@ -240,10 +262,16 @@ console.log(score);
 
 //create event listener for restart button
 
-//('#play-again').click(restartGame);
+('#play-again').click(restartGame);
+loadTitle();
+
 
 //When restart button is clicked, the screen will return
 //the elements of the title screen along with its functionality
-//function restartGame () {}
+function restartGame () {
+  score = 0;
+  questionCounter = 0;
+
+}
 
 });

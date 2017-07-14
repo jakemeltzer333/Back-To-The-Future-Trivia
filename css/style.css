@@ -2,17 +2,26 @@
   position: relative;
   top: 10px;
   left: 200px;
+  height: 53px;
+  width: 966px;
+  background-image: url('https://fontmeme.com/permalink/170712/bfa8154618eebfd511ec834b30078867.png');
 }
 
 .subhead {
   position: relative;
   top: 10px;
   left: 100px;
+  background-image: url('https://fontmeme.com/permalink/170712/342742b64de961b15befee03dfa2c732.png');
+  height: 34px;
+  width: 1143px;
 }
 
-.poster {
+#poster {
   position: relative;
   left: 350px;
+  background-image: url('https://vignette3.wikia.nocookie.net/bttf/images/4/48/Back_to_the_Future_2_Slider.jpg/revision/latest/scale-to-width-down/670?cb=20150922081439');
+  height: 360px;
+  width: 670px;
 }
 
 .start {
@@ -21,6 +30,12 @@
   top: 20px;
   padding: 10px;
   background-color: #DB1818;
+  background-image: url('https://fontmeme.com/permalink/170714/25c5e37dffb4fc98fb972652856a2df7.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 60% 50%;
+  height: 56px;
+  width: 146px;
 
 }
 
@@ -28,6 +43,8 @@
   position: relative;
   top: 3px;
   left: 5px;
+  height: 30px;
+  width: 122px;
 }
 
 ol {
