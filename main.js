@@ -52,8 +52,8 @@ const questions = [
     correctAnswer: 'Miami'
   }, {
     question: 'What is the title of the sports almanac that is crucial to the entire plot of the second film?',
-    choices: ['Gray\'s Sports Almanac', 'Gordon\'s Sports Almanac', 'Green\'s Sports Almanac', 'Gold\'s Sports Almanac'],
-    correctAnswer: 'Gray\'s Sports Almanac'
+    choices: ['Grays Sports Almanac', 'Gordons Sports Almanac', 'Greens Sports Almanac', 'Golds Sports Almanac'],
+    correctAnswer: 'Grays Sports Almanac'
   }, {
     question: 'What year do Marty and Doc travel to in Back to the Future 3?',
     choices: ['1865', '1875', '1885', '1905'],
@@ -172,7 +172,7 @@ function correctAnswers () {
   console.log(txt);
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
-        console.log('plus one');
+        console.log(score);
         score++;
         let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($greatScott);
@@ -185,14 +185,14 @@ function correctAnswers () {
       if (a === 19) {
         console.log('results button');
         //create "see results" button on the last question screen
-
+        //set event listener so that when "see results" button is clicked
+        //clickResults function runs
         let $nextButton = $('#next');
         console.log($nextButton);
-        $nextButton.attr('id', 'result-button');
         $nextButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
         $nextButton.off('click', nextQuestion);
-        //$nextButton.attr('id', 'result-button');
         $nextButton.click(clickResults);
+        $nextButton.attr('id', 'result-button');
       }
 };
 //changes the answers to the corresponding question
@@ -208,6 +208,7 @@ function updateAnswers () {
 
 //enables the next question button when an answer is clicked
 //then after that button is clicked, creates new questions and answers
+//counts the number of questions answered at any point in the game.
 function nextQuestion () {
     console.log('next question!');
     questionCounter++;
@@ -218,36 +219,31 @@ function nextQuestion () {
     $('#next').prop('disabled', true);
 
   }
-//For every correctAnswer in the questions array, click on the li that
-//corresponds to correctAnswer and displays that it's correct when clicked.
-//After answer is clicked, re-enable "Next Question" button.
-/*
-To log # of correct answers from userAnswers array, for every object in
-userAnswers array, need to see if response is equal to correctAnswer
-key value from initial questions array object. If so, add those up and
-don't add them up if they don't match correctAnswer.
-*/
-//tracks and stores all correct clicked answers
+
 
 function clickResults () {
-
-  if (questionCounter === questions.length) {
-    $('#result-button').click(setLastPage);
+console.log('click results');
+console.log(questionCounter);
+console.log(score);
+  if (questionCounter === 19) {
+    //will empty the final question screen when 'see results' button is
+    //clicked
     $('#container').empty();
-  }
-}
-
-function setLastPage () {
-  console.log('set last page');
+    console.log('set last page');
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
   $scoreDiv.text(`You Got ${score} Out Of 20`);
   let $playAgain = $('<button>');
-  $playAgain.attr('id', 'play-again');
   $playAgain.html('<img class = restart src="https://fontmeme.com/permalink/170713/0c99cb2ab6a14abefe2ca0a51c83084d.png" alt="back-to-the-future-font" border="0">')
+  $playAgain.attr('id', 'play-again');
 
   $scoreDiv.appendTo('#container');
   $playAgain.appendTo('#container');
+  }
+}
+
+function restartGame () {
+
 
   //clickResults();
 }
