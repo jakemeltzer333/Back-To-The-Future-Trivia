@@ -87,9 +87,9 @@ const questions = [
 
 let score = 0; //score player has at any point through the game
 let questionCounter = 0; //tracks question number
-let userAnswers = [];
 let $screen = $('.title-screen');
-//let answer = '';
+
+
 $('.start').click(clickStart);
 //when I click start button, title screen hides and question page forms
 function clickStart () {
@@ -134,10 +134,7 @@ function createQuestions () {
   //$('#question').text(questions[q].question);
   if (q === questions.length) {
       console.log('button removed');
-      //let $resultButton = $('#next');
-      //$resultButton.attr('id', 'result-button');
-      //$resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
-      //$resultButton.click(clickResults);
+
     } else {
       $('#question').text(questions[q].question);
     }
@@ -220,21 +217,20 @@ function nextQuestion () {
 
   }
 
-
+//will empty the final question screen when 'see results' button is
+//clicked. Will also display results screen.
 function clickResults () {
 console.log('click results');
 console.log(questionCounter);
 console.log(score);
   if (questionCounter === 19) {
-    //will empty the final question screen when 'see results' button is
-    //clicked
-    $('#container').empty();
-    console.log('set last page');
+    //$screen.empty();
+    console.log('see score and restart button');
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
-  $scoreDiv.text(`You Got ${score} Out Of 20`);
+  $scoreDiv.text(`You Got ${score} Out Of 20!`);
   let $playAgain = $('<button>');
-  $playAgain.html('<img class = restart src="https://fontmeme.com/permalink/170713/0c99cb2ab6a14abefe2ca0a51c83084d.png" alt="back-to-the-future-font" border="0">')
+  $playAgain.html('<img src="https://fontmeme.com/permalink/170714/d65c6f9b8fc411d1dc64baee98524b21.png" alt="back-to-the-future-font" border="0">')
   $playAgain.attr('id', 'play-again');
 
   $scoreDiv.appendTo('#container');
@@ -242,10 +238,12 @@ console.log(score);
   }
 }
 
-function restartGame () {
+//create event listener for restart button
 
+//('#play-again').click(restartGame);
 
-  //clickResults();
-}
+//When restart button is clicked, the screen will return
+//the elements of the title screen along with its functionality
+//function restartGame () {}
 
 });
