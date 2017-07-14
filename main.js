@@ -123,7 +123,6 @@ function setGame () {
 
     $('#next').prop('disabled', true);
 
-
     createQuestions();
     createAnswers();
     clickAnswers();
@@ -157,17 +156,11 @@ function createQuestions () {
     console.log('click answer');
     let $answer = $('li');
     $answer.on('click', correctAnswers);
-    let q = questionCounter;
-    if (q === questions.length) {
-      console.log('button removed');
-      //create "see results" button on the last question screen
-      let $resultButton = $('#next');
-      $resultButton.attr('id', 'result-button');
-      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
-    }
-   }
-//tracks and stores all correct clicked answers
 
+    }
+
+//tracks and stores all correct clicked answers
+//enables "forward" button to click to next question
 function correctAnswers () {
   let txt = $(this).text();
   let q = questions[questionCounter].question
@@ -180,18 +173,32 @@ function correctAnswers () {
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
         console.log('plus one');
+        score++;
         let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($greatScott);
-        score++;
       } else {
         let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($helloMcfly);
       }
     $('#next').prop('disabled', false);
+
+      if (a === 19) {
+        console.log('results button');
+        //create "see results" button on the last question screen
+
+        let $nextButton = $('#next');
+        console.log($nextButton);
+        $nextButton.attr('id', 'result-button');
+        $nextButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
+        $nextButton.off('click', nextQuestion);
+        //$nextButton.attr('id', 'result-button');
+        $nextButton.click(clickResults);
+      }
 };
 //changes the answers to the corresponding question
 //every time the previous question is answered
 function updateAnswers () {
+  console.log('updating answers!');
   let a = questionCounter;
   for (let i = 0; i < questions[a].choices.length; i++) {
        $(`#answer${i}`).text(questions[a].choices[i]);
@@ -202,8 +209,9 @@ function updateAnswers () {
 //enables the next question button when an answer is clicked
 //then after that button is clicked, creates new questions and answers
 function nextQuestion () {
-
+    console.log('next question!');
     questionCounter++;
+    console.log(questionCounter);
     createQuestions();
     updateAnswers();
     $('#answer-display').text('');
@@ -224,7 +232,7 @@ don't add them up if they don't match correctAnswer.
 function clickResults () {
 
   if (questionCounter === questions.length) {
-    //$('#result-button').click(setLastPage);
+    $('#result-button').click(setLastPage);
     $('#container').empty();
   }
 }
