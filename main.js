@@ -87,9 +87,15 @@ const questions = [
 
 let score = 0; //score player has at any point through the game
 let questionCounter = 0; //tracks question number
+let userAnswers = [];
 let $screen = $('.title-screen');
 //let answer = '';
 $('.start').click(clickStart);
+//when I click start button, title screen hides and question page forms
+function clickStart () {
+  $screen.css('display', 'none');
+   setGame();
+    }
 //create question screen
 function setGame () {
     console.log('setting game');
@@ -115,27 +121,13 @@ function setGame () {
 
 //Allow '#next' button to be disabled until an answer is clicked
 
-$('#next').prop('disabled', true);
+    $('#next').prop('disabled', true);
 
 
     createQuestions();
     createAnswers();
     clickAnswers();
   }
-//allow individual answers to be clicked
-  function clickAnswers () {
-    console.log('click answer');
-    let $answer = $('li');
-    $answer.on('click', correctAnswers);
-    let q = questionCounter;
-    if (q === questions.length) {
-      console.log('button removed');
-
-      let $resultButton = $('#next');
-      $resultButton.attr('id', 'result-button');
-      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
-    }
-   }
 //displays a new question every time previous question is answered
 function createQuestions () {
   console.log('questions created');
@@ -143,11 +135,10 @@ function createQuestions () {
   //$('#question').text(questions[q].question);
   if (q === questions.length) {
       console.log('button removed');
-
-      let $resultButton = $('#next');
-      $resultButton.attr('id', 'result-button');
-      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
-      $resultButton.click(clickResults);
+      //let $resultButton = $('#next');
+      //$resultButton.attr('id', 'result-button');
+      //$resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
+      //$resultButton.click(clickResults);
     } else {
       $('#question').text(questions[q].question);
     }
@@ -161,25 +152,34 @@ function createQuestions () {
       $answer.appendTo('ol');
     }
   }
-//changes the answers to the corresponding question
-//every time the previous question is answered
-function updateAnswers () {
-  let a = questionCounter;
-  for (let i = 0; i < questions[a].choices.length; i++) {
-       $(`#answer${i}`).text(questions[a].choices[i]);
-
+//allow individual answers to be clicked
+  function clickAnswers () {
+    console.log('click answer');
+    let $answer = $('li');
+    $answer.on('click', correctAnswers);
+    let q = questionCounter;
+    if (q === questions.length) {
+      console.log('button removed');
+      //create "see results" button on the last question screen
+      let $resultButton = $('#next');
+      $resultButton.attr('id', 'result-button');
+      $resultButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
     }
+   }
+//tracks and stores all correct clicked answers
 
-  }
-//For every correctAnswer in the questions array, click on the li that
-//corresponds to correctAnswer and displays that it's correct when clicked.
-//After answer is clicked, re-enable "Next Question" button.
 function correctAnswers () {
   let txt = $(this).text();
+  let q = questions[questionCounter].question
+  let obj = {
+    quest: q,
+    resp: txt
+  }
+  userAnswers.push(obj);
   console.log(txt);
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
-        console.log('great scott!');
+        console.log('plus one');
         let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($greatScott);
         score++;
@@ -189,12 +189,16 @@ function correctAnswers () {
       }
     $('#next').prop('disabled', false);
 };
+//changes the answers to the corresponding question
+//every time the previous question is answered
+function updateAnswers () {
+  let a = questionCounter;
+  for (let i = 0; i < questions[a].choices.length; i++) {
+       $(`#answer${i}`).text(questions[a].choices[i]);
 
-//when I click start button, title screen hides and question page forms
-function clickStart () {
-  $screen.css('display', 'none');
-   setGame();
     }
+  }
+
 //enables the next question button when an answer is clicked
 //then after that button is clicked, creates new questions and answers
 function nextQuestion () {
@@ -206,12 +210,22 @@ function nextQuestion () {
     $('#next').prop('disabled', true);
 
   }
+//For every correctAnswer in the questions array, click on the li that
+//corresponds to correctAnswer and displays that it's correct when clicked.
+//After answer is clicked, re-enable "Next Question" button.
+/*
+To log # of correct answers from userAnswers array, for every object in
+userAnswers array, need to see if response is equal to correctAnswer
+key value from initial questions array object. If so, add those up and
+don't add them up if they don't match correctAnswer.
+*/
+//tracks and stores all correct clicked answers
 
 function clickResults () {
-  let q = questionCounter;
-  if (q === questions.length) {
+
+  if (questionCounter === questions.length) {
     //$('#result-button').click(setLastPage);
-    $screen.css('display', 'none');
+    $('#container').empty();
   }
 }
 
@@ -219,6 +233,7 @@ function setLastPage () {
   console.log('set last page');
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
+  $scoreDiv.text(`You Got ${score} Out Of 20`);
   let $playAgain = $('<button>');
   $playAgain.attr('id', 'play-again');
   $playAgain.html('<img class = restart src="https://fontmeme.com/permalink/170713/0c99cb2ab6a14abefe2ca0a51c83084d.png" alt="back-to-the-future-font" border="0">')
