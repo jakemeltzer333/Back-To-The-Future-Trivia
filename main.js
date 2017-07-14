@@ -213,7 +213,7 @@ function correctAnswers () {
         $nextButton.click(clickResults);
         $nextButton.attr('id', 'result-button');
       }
-};
+  };
 //changes the answers to the corresponding question
 //every time the previous question is answered
 function updateAnswers () {
@@ -237,17 +237,15 @@ function nextQuestion () {
     $('#answer-display').text('');
     $('#next').prop('disabled', true);
 
-  }
+  };
 
 //will empty the final question screen when 'see results' button is
 //clicked. Will also display results screen.
 function clickResults () {
-console.log('click results');
-console.log(questionCounter);
-console.log(score);
-  if (questionCounter === 19) {
-    //$screen.empty();
-    console.log('see score and restart button');
+  console.log('click results');
+  console.log(questionCounter);
+  console.log(score);
+  console.log('see score and restart button');
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
   $scoreDiv.text(`You Got ${score} Out Of 20!`);
@@ -257,21 +255,22 @@ console.log(score);
 
   $scoreDiv.appendTo('#container');
   $playAgain.appendTo('#container');
-  }
+
+  restartGame();
 }
 
 //create event listener for restart button
-
-('#play-again').click(restartGame);
-loadTitle();
-
+//$('#play-again').click(loadTitle);
 
 //When restart button is clicked, the screen will return
 //the elements of the title screen along with its functionality
 function restartGame () {
+  $('#play-again').click(function () {
+    $('body').children().remove();
+    loadTitle();
+  });
   score = 0;
   questionCounter = 0;
-
-}
+};
 
 });
