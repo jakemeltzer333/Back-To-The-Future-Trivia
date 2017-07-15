@@ -11,13 +11,12 @@ body {
   /* For Opera 11.1 to 12.0 */);*/
   background-size: cover;
   background-repeat: no-repeat;
-}
+  }
 
 #container {
   height: 770px;
   width: 890px;
   background-repeat: none;
-
 }
 
 .header {
@@ -58,7 +57,6 @@ body {
   background-position: 60% 50%;
   height: 56px;
   width: 146px;
-
 }
 
 ol {
@@ -68,21 +66,6 @@ ol {
 li {
   padding: 5px;
   width: 300px;
-}
-
-/*li:hover {
-  background: -webkit-linear-gradient(left top, red, orange, yellow);
-  /* For Opera 11.1 to 12.0 */
-  /*background: -o-linear-gradient(bottom right, red, orange, yellow);
-  /* For Opera 11.1 to 12.0 */);
-  /* For Fx 3.6 to 15 */
-  /*background: -moz-linear-gradient(bottom right, red, orange, yellow);
-  /* For Opera 11.1 to 12.0 */);
-  /* Standard syntax */
-  /*background: linear-gradient(to bottom right, red, orange, yellow);
-  /* For Opera 11.1 to 12.0 */);*/
-
-
 }
 
 .forward {

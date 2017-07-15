@@ -155,10 +155,8 @@ function setGame () {
 //displays a new question every time previous question is answered
 function createQuestions () {
   let q = questionCounter;
-  //$('#question').text(questions[q].question);
   if (q === questions.length) {
       console.log('button removed');
-
     } else {
       $('#question').text(questions[q].question);
     }
@@ -184,7 +182,6 @@ function createQuestions () {
 //tracks and stores all correct clicked answers
 function correctAnswers () {
   let txt = $(this).text();
-  let q = questions[questionCounter].question
   console.log(txt);
   let a = questionCounter;
       if (txt === questions[a].correctAnswer) {
@@ -201,9 +198,8 @@ function correctAnswers () {
     $('#next').prop('disabled', false);
 
       if (a === 19) {
-        //create "see results" button on the last question screen
-        //set event listener so that when "see results" button is clicked
-        //clickResults function runs
+//create "see results" button on the last question screen set event
+//listener so that when "see results" button is clicked, clickResults function runs
         let $nextButton = $('#next');
         $nextButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
         $nextButton.off('click', nextQuestion);
