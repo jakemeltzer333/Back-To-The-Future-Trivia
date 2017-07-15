@@ -206,12 +206,10 @@ function correctAnswers () {
     $('#next').prop('disabled', false);
 
       if (a === 19) {
-        console.log('results button');
         //create "see results" button on the last question screen
         //set event listener so that when "see results" button is clicked
         //clickResults function runs
         let $nextButton = $('#next');
-        console.log($nextButton);
         $nextButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
         $nextButton.off('click', nextQuestion);
         $nextButton.click(clickResults);
@@ -269,7 +267,7 @@ function clickResults () {
 //Score and questionCounter variables will then reset to 0.
 function restartGame () {
   $('#play-again').click(function () {
-    $('body').children().remove();
+    location.reload();
     loadTitle();
   });
   score = 0;

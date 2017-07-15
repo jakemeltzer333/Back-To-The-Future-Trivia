@@ -1,11 +1,11 @@
 body {
-  background: -webkit-linear-gradient(left top, #462BAD, #C0C0C0, #DB1818);
+  background: -webkit-linear-gradient(left top, #2845C7, #C0C0C0, #E8002D);
   /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right, #462BAD, #C0C0C0, #DB1818);
+  background: -o-linear-gradient(bottom right, #2845C7, #C0C0C0, #E8002D);
   /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(bottom right, #462BAD, #C0C0C0, #DB1818);
+  background: -moz-linear-gradient(bottom right, #2845C7, #C0C0C0, #E8002D);
   /* Standard syntax */
-  background: linear-gradient(to bottom right, #462BAD, #C0C0C0, #DB1818);
+  background: linear-gradient(to bottom right, #2845C7, #C0C0C0, #E8002D);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -58,6 +58,10 @@ body {
 
 }
 
+.start:active {
+  transition: all 1s linear .5s;
+}
+
 .start-button {
   position: relative;
   top: 3px;
@@ -76,13 +80,13 @@ li {
 }
 
 li:hover {
-  background: -webkit-linear-gradient(left top, #462BAD, #DB1818);
+  background: -webkit-linear-gradient(left top, #2845C7, #E8002D);
   /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right, #462BAD, #DB1818);
+  background: -o-linear-gradient(bottom right, #2845C7, #E8002D);
   /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(bottom right, #462BAD, #DB1818);
+  background: -moz-linear-gradient(bottom right, #2845C7, #E8002D);
   /* Standard syntax */
-  background: linear-gradient(to bottom right, #462BAD, #DB1818);
+  background: linear-gradient(to bottom right, #2845C7, #E8002D);
 
 
 }
