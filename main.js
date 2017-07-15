@@ -51,7 +51,7 @@ const questions = [
     choices: ['New York', 'Miami', 'Boston', 'Los Angeles'],
     correctAnswer: 'Miami'
   }, {
-    question: 'What is the title of the sports almanac that is crucial to the entire plot of the second film?',
+    question: 'What is the title of the sports almanac from the second film?',
     choices: ['Grays Sports Almanac', 'Gordons Sports Almanac', 'Greens Sports Almanac', 'Golds Sports Almanac'],
     correctAnswer: 'Grays Sports Almanac'
   }, {
@@ -85,9 +85,8 @@ const questions = [
   }
 ];
 
-let score = 0; //score player has at any point through the game
-let questionCounter = 0; //tracks question number
-let $screen = $('.title-screen');
+  let score = 0; //score player has at any point through the game
+  let questionCounter = 0; //tracks question number
 
 //load title screen when the page loads
 function loadTitle () {
@@ -116,11 +115,12 @@ function loadTitle () {
 
 }
 
-
+//Event listener that allows the start button to be clicked on title screen
+//and calls the clickStart function.
 $('.start').click(clickStart);
 //when I click start button, title screen hides and question page forms
 function clickStart () {
-  $screen.css('display', 'none');
+  $('.title-screen').css('display', 'none');
    setGame();
     }
 //create question screen
@@ -166,7 +166,9 @@ function createQuestions () {
       $('#question').text(questions[q].question);
     }
 }
-//displays new answers on the game screen
+//displays new answers on the game screen. For every answer in the 'choices'
+//key value in each object of the questions array, an ID will be assigned
+//corresponding to its position in the 'choices' array.
  function createAnswers () {
   console.log('answers created');
    let a = questionCounter;
@@ -175,7 +177,8 @@ function createQuestions () {
       $answer.appendTo('ol');
     }
   }
-//allow individual answers to be clicked
+//allow individual answers to be clicked and correctAnswers function to
+//be called.
   function clickAnswers () {
     console.log('click answer');
     let $answer = $('li');
@@ -184,7 +187,6 @@ function createQuestions () {
     }
 
 //tracks and stores all correct clicked answers
-//enables "forward" button to click to next question
 function correctAnswers () {
   let txt = $(this).text();
   let q = questions[questionCounter].question
@@ -199,6 +201,8 @@ function correctAnswers () {
         let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
         $('#answer-display').html($helloMcfly);
       }
+
+    //enables "forward" button to click to next question
     $('#next').prop('disabled', false);
 
       if (a === 19) {
@@ -239,8 +243,9 @@ function nextQuestion () {
 
   };
 
-//will empty the final question screen when 'see results' button is
-//clicked. Will also display results screen.
+//When 'See Results' button is clicked, player's score will appear at
+//the bottom of the final question screen along with the button that
+//will prompt the player to start the game over.
 function clickResults () {
   console.log('click results');
   console.log(questionCounter);
@@ -250,7 +255,7 @@ function clickResults () {
   $scoreDiv.attr('id', 'score');
   $scoreDiv.text(`You Got ${score} Out Of 20!`);
   let $playAgain = $('<button>');
-  $playAgain.html('<img src="https://fontmeme.com/permalink/170714/d65c6f9b8fc411d1dc64baee98524b21.png" alt="back-to-the-future-font" border="0">')
+  $playAgain.html('<img class = "restart" src="https://fontmeme.com/permalink/170714/d65c6f9b8fc411d1dc64baee98524b21.png" alt="back-to-the-future-font" border="0">')
   $playAgain.attr('id', 'play-again');
 
   $scoreDiv.appendTo('#container');
@@ -259,11 +264,9 @@ function clickResults () {
   restartGame();
 }
 
-//create event listener for restart button
-//$('#play-again').click(loadTitle);
-
 //When restart button is clicked, the screen will return
-//the elements of the title screen along with its functionality
+//the elements of the title screen along with its functionality.
+//Score and questionCounter variables will then reset to 0.
 function restartGame () {
   $('#play-again').click(function () {
     $('body').children().remove();

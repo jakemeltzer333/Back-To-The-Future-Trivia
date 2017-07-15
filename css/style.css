@@ -1,6 +1,25 @@
+body {
+  background: -webkit-linear-gradient(left top, #462BAD, #C0C0C0, #DB1818);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right, #462BAD, #C0C0C0, #DB1818);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(bottom right, #462BAD, #C0C0C0, #DB1818);
+  /* Standard syntax */
+  background: linear-gradient(to bottom right, #462BAD, #C0C0C0, #DB1818);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#container {
+  height: 770px;
+  width: 890px;
+  background-repeat: none;
+
+}
+
 .header {
   position: relative;
-  top: 10px;
+  top: 20px;
   left: 200px;
   height: 53px;
   width: 966px;
@@ -9,7 +28,7 @@
 
 .subhead {
   position: relative;
-  top: 10px;
+  top: 20px;
   left: 100px;
   background-image: url('https://fontmeme.com/permalink/170712/342742b64de961b15befee03dfa2c732.png');
   height: 34px;
@@ -19,6 +38,7 @@
 #poster {
   position: relative;
   left: 350px;
+  top: 20px;
   background-image: url('https://vignette3.wikia.nocookie.net/bttf/images/4/48/Back_to_the_Future_2_Slider.jpg/revision/latest/scale-to-width-down/670?cb=20150922081439');
   height: 360px;
   width: 670px;
@@ -27,11 +47,10 @@
 .start {
   position: relative;
   left: 600px;
-  top: 20px;
+  top: 30px;
   padding: 10px;
   background-color: #DB1818;
   background-image: url('https://fontmeme.com/permalink/170714/25c5e37dffb4fc98fb972652856a2df7.png');
-  background-size: contain;
   background-repeat: no-repeat;
   background-position: 60% 50%;
   height: 56px;
@@ -51,8 +70,21 @@ ol {
   list-style: upper-alpha;
 }
 
+li {
+  padding: 5px;
+  width: 300px;
+}
+
 li:hover {
-  background-color: #231ED6;
+  background: -webkit-linear-gradient(left top, #462BAD, #DB1818);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right, #462BAD, #DB1818);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(bottom right, #462BAD, #DB1818);
+  /* Standard syntax */
+  background: linear-gradient(to bottom right, #462BAD, #DB1818);
+
+
 }
 
 .forward {
@@ -62,12 +94,20 @@ li:hover {
 }
 
 #question {
-  background-color: #DB1818;
-  color: #231ED6;
+  background: -webkit-linear-gradient(left top, #462BAD, #DB1818);
+  /* For Opera 11.1 to 12.0 */
+  background: -o-linear-gradient(bottom right, #462BAD, #DB1818);
+  /* For Fx 3.6 to 15 */
+  background: -moz-linear-gradient(bottom right, #462BAD, #DB1818);
+  /* Standard syntax */
+  background: linear-gradient(to bottom right, #462BAD, #DB1818);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: #DB1818;
   font-size: 50px;
   font-family: 'Bangers', cursive;
   position: relative;
-  left: 200px;
+  display: inline;
 }
 
 #answer-list {
@@ -91,8 +131,26 @@ button {
   background-color: #DB1818;
 }
 
+#result-button {
+  position: relative;
+  left: 500px;
+}
+
 .see-results {
   position: relative;
   top: 3px;
   left: 5px;
+}
+
+#score {
+  position: relative;
+  left: 500px;
+  font-family: 'Bangers', cursive;
+  font-size: 50px;
+  color: #462BAD;
+}
+
+#play-again {
+  position: relative;
+  left: 400px;
 }
