@@ -70,16 +70,16 @@ li {
 
 .forward {
   position: relative;
-  top: 20%;
-  left: 20%;
+  top: 3px;
+  left: 5px;
 }
 
 #question {
   color: #0000CD;
   font-size: 50px;
   font-family: 'Bangers', cursive;
-  /*position: relative;
-  text-align: center;*/
+  margin-left: 40%;
+  position: relative;
 }
 
 #answer-list {
