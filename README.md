@@ -86,8 +86,12 @@ I detailed my biggest challenges in the making of my game in the above
 section.
 
 ## Any credits or notes you feel you should add
+The feedback from my regular study group was invaluable in terms of 
+helping me talk through my logic and get it down in workable code form.
+They also were able to point out silly syntax errors I would inevitably
+make. Major props to Alex, Dan, Jason, Philip, and Ryan for all of that.
 
-##Opportunities for Future Growth
+## Opportunities for Future Growth
 
 From now on, in CSS, I will exclusively use percentages instead of pixels 
 to size everything. It would've made doing a media query a LOT easier 
