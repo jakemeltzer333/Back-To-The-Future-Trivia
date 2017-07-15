@@ -90,7 +90,6 @@ const questions = [
 
 //load title screen when the page loads
 function loadTitle () {
-  console.log('title screen loaded');
   let $container = $('<div>');
   $container.attr('id', 'container');
   $container.appendTo('body');
@@ -125,7 +124,6 @@ function clickStart () {
     }
 //create question screen
 function setGame () {
-    console.log('setting game');
     let $questionDiv = $('<div>');
     $questionDiv.attr('id', 'question');
     let $answerDiv = $('<div>');
@@ -156,7 +154,6 @@ function setGame () {
   }
 //displays a new question every time previous question is answered
 function createQuestions () {
-  console.log('questions created');
   let q = questionCounter;
   //$('#question').text(questions[q].question);
   if (q === questions.length) {
@@ -166,11 +163,10 @@ function createQuestions () {
       $('#question').text(questions[q].question);
     }
 }
-//displays new answers on the game screen. For every answer in the 'choices'
+//displays new answers on the game screen. For every string in the 'choices'
 //key value in each object of the questions array, an ID will be assigned
 //corresponding to its position in the 'choices' array.
  function createAnswers () {
-  console.log('answers created');
    let a = questionCounter;
   for (let i = 0; i < questions[a].choices.length; i++) {
       let $answer = $('<li>', {id: `answer${i}`}).text(questions[a].choices[i]);
@@ -180,7 +176,6 @@ function createQuestions () {
 //allow individual answers to be clicked and correctAnswers function to
 //be called.
   function clickAnswers () {
-    console.log('click answer');
     let $answer = $('li');
     $answer.on('click', correctAnswers);
 
@@ -219,7 +214,6 @@ function correctAnswers () {
 //changes the answers to the corresponding question
 //every time the previous question is answered
 function updateAnswers () {
-  console.log('updating answers!');
   let a = questionCounter;
   for (let i = 0; i < questions[a].choices.length; i++) {
        $(`#answer${i}`).text(questions[a].choices[i]);
@@ -231,7 +225,6 @@ function updateAnswers () {
 //then after that button is clicked, creates new questions and answers
 //counts the number of questions answered at any point in the game.
 function nextQuestion () {
-    console.log('next question!');
     questionCounter++;
     console.log(questionCounter);
     createQuestions();
@@ -245,10 +238,8 @@ function nextQuestion () {
 //the bottom of the final question screen along with the button that
 //will prompt the player to start the game over.
 function clickResults () {
-  console.log('click results');
   console.log(questionCounter);
   console.log(score);
-  console.log('see score and restart button');
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
   $scoreDiv.text(`You Got ${score} Out Of 20!`);

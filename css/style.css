@@ -1,11 +1,14 @@
 body {
-  background: -webkit-linear-gradient(left top, #2845C7, #C0C0C0, #E8002D);
+  background: -webkit-linear-gradient(left top, red, orange, yellow);
   /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right, #2845C7, #C0C0C0, #E8002D);
+  background: -o-linear-gradient(bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);
   /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(bottom right, #2845C7, #C0C0C0, #E8002D);
+  background: -moz-linear-gradient(bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);
   /* Standard syntax */
-  background: linear-gradient(to bottom right, #2845C7, #C0C0C0, #E8002D);
+  background: linear-gradient(to bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);*/
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -58,18 +61,6 @@ body {
 
 }
 
-.start:active {
-  transition: all 1s linear .5s;
-}
-
-.start-button {
-  position: relative;
-  top: 3px;
-  left: 5px;
-  height: 30px;
-  width: 122px;
-}
-
 ol {
   list-style: upper-alpha;
 }
@@ -79,47 +70,42 @@ li {
   width: 300px;
 }
 
-li:hover {
-  background: -webkit-linear-gradient(left top, #2845C7, #E8002D);
+/*li:hover {
+  background: -webkit-linear-gradient(left top, red, orange, yellow);
   /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right, #2845C7, #E8002D);
+  /*background: -o-linear-gradient(bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);
   /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(bottom right, #2845C7, #E8002D);
+  /*background: -moz-linear-gradient(bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);
   /* Standard syntax */
-  background: linear-gradient(to bottom right, #2845C7, #E8002D);
+  /*background: linear-gradient(to bottom right, red, orange, yellow);
+  /* For Opera 11.1 to 12.0 */);*/
 
 
 }
 
 .forward {
   position: relative;
-  top: 4px;
-  left: 5px;
+  top: 20%;
+  left: 20%;
 }
 
 #question {
-  background: -webkit-linear-gradient(left top, #462BAD, #DB1818);
-  /* For Opera 11.1 to 12.0 */
-  background: -o-linear-gradient(bottom right, #462BAD, #DB1818);
-  /* For Fx 3.6 to 15 */
-  background: -moz-linear-gradient(bottom right, #462BAD, #DB1818);
-  /* Standard syntax */
-  background: linear-gradient(to bottom right, #462BAD, #DB1818);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: #DB1818;
+  color: #0000CD;
   font-size: 50px;
   font-family: 'Bangers', cursive;
-  position: relative;
-  display: inline;
+  /*position: relative;
+  text-align: center;*/
 }
 
 #answer-list {
   font-family: 'Bangers', cursive;
   font-size: 50px;
-  color: #DB1818;
+  color: #0000CD;
   position: relative;
   left: 500px;
+  cursor: default;
 }
 
 #answer-display {
@@ -151,7 +137,7 @@ button {
   left: 500px;
   font-family: 'Bangers', cursive;
   font-size: 50px;
-  color: #462BAD;
+  color: #0000CD;
 }
 
 #play-again {
