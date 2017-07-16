@@ -47,13 +47,13 @@ const questions = [
     choices: ['Claudia Wells', 'Winona Ryder', 'Lea Thompson', 'Elizabeth Shue'],
     correctAnswer: 'Elizabeth Shue'
   }, {
-    question: 'In Back to the Future 2, when Doc and Marty travel to the future, there’s a headline that says the Chicago Cubs won the World Series. What city is the losing team from?',
+    question: 'In Back to the Future 2, when Doc and Marty travel to 2015, there’s a headline that says the Chicago Cubs won the World Series. What city is the losing team from?',
     choices: ['New York', 'Miami', 'Boston', 'Los Angeles'],
     correctAnswer: 'Miami'
   }, {
     question: 'What is the title of the sports almanac from the second film?',
-    choices: ['Grays Sports Almanac', 'Gordons Sports Almanac', 'Greens Sports Almanac', 'Golds Sports Almanac'],
-    correctAnswer: 'Grays Sports Almanac'
+    choices: ['Grays', 'Gordons', 'Greens', 'Golds'],
+    correctAnswer: 'Grays'
   }, {
     question: 'What year do Marty and Doc travel to in Back to the Future 3?',
     choices: ['1865', '1875', '1885', '1905'],
@@ -79,7 +79,7 @@ const questions = [
     choices: ['Robert Zemeckis', 'Steven Spielberg', 'Sydney Pollack', 'Mike Nichols'],
     correctAnswer: 'Robert Zemeckis'
   }, {
-    question: 'Name the actor that was originally cast as Marty McFly before Michael J. Fox replaced him six weeks into filming?',
+    question: 'Name the actor originally cast as Marty before Michael J. Fox replaced him six weeks into filming?',
     choices: ['Crispin Glover', 'Eric Stoltz', 'Tom Cruise', 'Tom Wilson'],
     correctAnswer: 'Eric Stoltz'
   }
