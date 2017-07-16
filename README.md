@@ -3,7 +3,6 @@
 
 ## Back to The Future Trivia
 
-[screenshot]
 ![Title screen](bttf-trivia-title-screen.png)
 ![Question Screen](bttf-trivia-question-screen.png)
 
@@ -11,19 +10,21 @@
 
 The title is fairly self-explanatory: create a trivia game consisting of
 20 multiple choice questions of varying difficulty from all three films 
-in the Back to the Future trilogy. I'm chose to make it because I am 
-a massive movie geek, I love these films, and since my GA WDI cohort is 
-called 'DeLorean,' I wanted to pay tribute by creating a game that 
+in the Back to the Future trilogy. I chose to make this game because I am 
+a massive movie geek, I love these films, and my GA WDI cohort is 
+called 'DeLorean.' I wanted to pay tribute by creating a game that 
 combined my passion for film with this course.
 
 ## Technical Discussion
 
-For this project, I used HTML (mainly just to link everything), CSS, 
-and a whole lot of jQuery.
+For this project, I used CSS, Javascript (namely a whole lot of jQuery),
+and HTML (mainly just to link my CSS and Javasript files). I created my
+title and question screens entirely through DOM manipulation. I created
+11 separate functions within one large jQuery function.
 
 ## Notes on Game Structure
 
-Code sample below
+### Code sample below
 ```
 //tracks and stores all correct clicked answers
 function correctAnswers () {
@@ -64,11 +65,11 @@ function correctAnswers () {
   ended it, and eventually just decided that instead of having the HTML
   for my title page in my index.html file,  I had to generate my entire game
   in the DOM to make it work more easily. Instead of clearing the screen
-  at the end, I finally came to the conclusion to use 'location.reload'
-  and as soon as I did that and it worked, it got frustrated because I 
-  spent so much time trying to figure out other solutions that weren't
-  working. To find the solution was really that simple was humbling to be
-  sure.
+  at the end, I finally came to the conclusion (with some advice) to use 
+  'location.reload' and as soon as I did that and it worked, I got frustrated 
+  because I had spent so much time trying to figure out other solutions 
+  that weren't working. To find the solution was really that simple was 
+  humbling to be sure.
 
 ## The Making of Back To The Future Trivia
 
@@ -86,10 +87,12 @@ I detailed my biggest challenges in the making of my game in the above
 section.
 
 ## Any credits or notes you feel you should add
+
 The feedback from my regular study group was invaluable in terms of 
 helping me talk through my logic and get it down in workable code form.
-They also were able to point out silly syntax errors I would inevitably
-make. Major props to Alex, Dan, Jason, Philip, and Ryan for all of that.
+They also were able to point out the seemingly infinite silly syntax 
+errors I would inevitably make. Major props to Alex, Dan, Jason, Philip, 
+and Ryan for all of that.
 
 ## Opportunities for Future Growth
 
@@ -98,10 +101,10 @@ to size everything. It would've made doing a media query a LOT easier
 and I didn't even think about it until it was too late. 
 That was definitely a huge learning experience for me.
 
-##If you had more time to work on your game, what would you do?
+## If you had more time to work on your game, what would you do?
 
 Honestly, I'm amazed I got my game to work as well as it does, so there
 really isn't too much more I was dying to do with it. I might have made
 some fancier design elements if I had more time like insert BTTF music
-or maybe bolts of lightning, but beyond unnecessary cosmetic tweaks, 
-I'm happy with the functionality of my game.
+or maybe bolts of lightning, but beyond those fun but ultimately unnecessary 
+cosmetic tweaks, I'm happy with the functionality of my game.

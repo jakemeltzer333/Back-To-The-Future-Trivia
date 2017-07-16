@@ -122,6 +122,7 @@ function clickStart () {
   $('.title-screen').css('display', 'none');
    setGame();
     }
+
 //create question screen
 function setGame () {
     let $questionDiv = $('<div>');
@@ -152,6 +153,7 @@ function setGame () {
     createAnswers();
     clickAnswers();
   }
+
 //displays a new question every time previous question is answered
 function createQuestions () {
   let q = questionCounter;
@@ -161,6 +163,7 @@ function createQuestions () {
       $('#question').text(questions[q].question);
     }
 }
+
 //displays new answers on the game screen. For every string in the 'choices'
 //key value in each object of the questions array, an ID will be assigned
 //corresponding to its position in the 'choices' array.
@@ -207,6 +210,7 @@ function correctAnswers () {
         $nextButton.attr('id', 'result-button');
       }
   };
+
 //changes the answers to the corresponding question
 //every time the previous question is answered
 function updateAnswers () {
@@ -234,7 +238,6 @@ function nextQuestion () {
 //the bottom of the final question screen along with the button that
 //will prompt the player to start the game over.
 function clickResults () {
-  console.log(questionCounter);
   console.log(score);
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
@@ -256,9 +259,9 @@ function restartGame () {
   $('#play-again').click(function () {
     location.reload();
     loadTitle();
-  });
+    });
   score = 0;
   questionCounter = 0;
-};
+  };
 
 });
