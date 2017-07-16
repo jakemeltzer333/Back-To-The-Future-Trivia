@@ -2,9 +2,12 @@
 20 Questions of Back To The Future Trivia from all 3 films.
 
 ## Back to The Future Trivia
-
+### Screenshots
 ![Title screen](bttf-trivia-title-screen.png)
 ![Question Screen](bttf-trivia-question-screen.png)
+
+### Wireframes
+![Welcome Screen & Question Screen](./projectwireframes/IMG_0794.JPG)
 
 ## What is Back To The Future Trivia?
 
@@ -14,6 +17,18 @@ in the Back to the Future trilogy. I chose to make this game because I am
 a massive movie geek, I love these films, and my GA WDI cohort is 
 called 'DeLorean.' I wanted to pay tribute by creating a game that 
 combined my passion for film with this course.
+
+### How to Play Back To The Future Trivia
+
+Click the 'Start Button' on the title screen. This will take you to the
+first question screen. Click on the text of the answer you want. After the
+custom message showing whether your answer was correct or not, click the
+'forward button' to move on to the next question. Repeat these steps for
+each question until the final one. At that point, a 'See Results' button
+will appear. Click on that button to see your final score. A button saying
+'Go Back to the Future' which also appear, which will allow you to restart
+the game when clicked. Your score will return to zero and you can try 
+and do better the next time!
 
 ## Technical Discussion
 
@@ -75,24 +90,27 @@ function correctAnswers () {
 
 The first thing I did was create my array of questions, which was a lot 
 of fun to do and where most of my creativity came through. The next step
-was getting my game to clear the title screen, set up the question screen,
-and to cycle through all the questions in my array in order. This was the
-most crucial step in creating my game and while challenging, was less 
-difficult than getting the game to stop and restart. I didn't add the 
-score counter until the end, even though that's a huge part of trivia,
-but I felt it was important to be able to cycle through my questions before
-I figured out some of the more idiosyncratic aspects of my game such as
-disabling the 'Forward' button until the user clicked on an answer.
-I detailed my biggest challenges in the making of my game in the above 
-section.
+was getting my game to clear the title screen when I clicked the start 
+button to set up the question screen, and to cycle through all the questions
+in my array in order. This was themost crucial step in creating my game 
+and while challenging, was less difficult than getting the game to stop 
+and restart. I didn't add the score counter until the end, even though 
+that's a huge part of trivia, but I felt it was important to be able to 
+cycle through my questions before I figured out some of the more 
+idiosyncratic aspects of my game such as disabling the 'Forward' button 
+until the user clicked on an answer. I detailed my biggest challenges in 
+the making of my game in the above section.
 
-## Any credits or notes you feel you should add
+## Any credits or notes I should add
+Got the idea of how to build my questions array from this codepen:
+
+https://codepen.io/gcarino/pen/LDgtn
 
 The feedback from my regular study group was invaluable in terms of 
 helping me talk through my logic and get it down in workable code form.
 They also were able to point out the seemingly infinite silly syntax 
 errors I would inevitably make. Major props to Alex, Dan, Jason, Philip, 
-and Ryan for all of that.
+and Ryan for all of that help.
 
 ## Opportunities for Future Growth
 
