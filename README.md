@@ -16,7 +16,9 @@ The title is fairly self-explanatory: create a trivia game consisting of
 in the Back to the Future trilogy. I chose to make this game because I am 
 a massive movie geek, I love these films, and my GA WDI cohort is 
 called 'DeLorean.' I wanted to pay tribute by creating a game that 
-combined my passion for film with this course.
+combined my passion for film with this course. This game is not for 
+commercial use, it is strictly for educational purposes pertaining to 
+coding.
 
 ### How to Play Back To The Future Trivia
 
