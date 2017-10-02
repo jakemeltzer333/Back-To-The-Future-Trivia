@@ -139,8 +139,8 @@ function setGame () {
 
     $questionDiv.appendTo('#container');
     $answerDiv.appendTo('#container');
-    $nextButton.appendTo('#container');
     $answerList.appendTo('#answers');
+    $nextButton.appendTo('#answers');
     $answerDisplay.appendTo('#container');
 
 
