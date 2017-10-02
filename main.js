@@ -104,7 +104,7 @@ function loadTitle () {
   $subhead.addClass('subhead');
   $subhead.text('Where You\'re Going, You Won\'t Need Roads, Just Knowledge!')
   $subhead.appendTo('.title-screen');
-  let $poster = $('<img id = "poster">');
+  let $poster = $('<div id = "poster">');
   $poster.appendTo('.title-screen');
   let $start = $('<button>');
   $start.addClass('start');
@@ -134,7 +134,7 @@ function setGame () {
     let $answerDisplay = $('<span>');
     $answerDisplay.attr('id', 'answer-display');
     $nextButton.attr('id', 'next');
-    $nextButton.html('<img class = "forward" src="https://fontmeme.com/permalink/170713/bff1cef89969b680f10fdcc0595fa88e.png" alt="back-to-the-future-font" border="0">');
+    $nextButton.text('Forward!');
     $nextButton.on('click', nextQuestion);
 
     $questionDiv.appendTo('#container');
