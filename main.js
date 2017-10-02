@@ -98,9 +98,11 @@ function loadTitle () {
   $titleScreen.appendTo('#container');
   let $header = $('<header>');
   $header.addClass('header');
+  $header.text('Back To The Future Trivia')
   $header.appendTo('.title-screen');
   let $subhead = $('<h2>');
   $subhead.addClass('subhead');
+  $subhead.text('Where You\'re Going, You Won\'t Need Roads, Just Knowledge!')
   $subhead.appendTo('.title-screen');
   let $poster = $('<img id = "poster">');
   $poster.appendTo('.title-screen');
