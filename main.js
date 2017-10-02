@@ -197,7 +197,7 @@ function correctAnswers () {
     //enables "forward" button to click to next question
     $('#next').prop('disabled', false);
 
-      if (a === 19) {
+      if (a === 2) {
 //create "see results" button on the last question screen set event
 //listener so that when "see results" button is clicked, clickResults function runs
         let $nextButton = $('#next');
@@ -238,9 +238,9 @@ function clickResults () {
   console.log(score);
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
-  $scoreDiv.text(`You Got ${score} Out Of 20!`);
+  $scoreDiv.text(`You Got ${score} Out Of ${questionCounter}!`);
   let $playAgain = $('<button>');
-  $playAgain.html('<img class = "restart" src="https://fontmeme.com/permalink/170714/d65c6f9b8fc411d1dc64baee98524b21.png" alt="back-to-the-future-font" border="0">')
+  $playAgain.html('Go Back To The Future!')
   $playAgain.attr('id', 'play-again');
 
   $scoreDiv.appendTo('#container');
