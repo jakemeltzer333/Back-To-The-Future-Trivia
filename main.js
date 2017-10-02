@@ -52,8 +52,8 @@ const questions = [
     correctAnswer: 'Miami'
   }, {
     question: 'What is the title of the sports almanac from the second film?',
-    choices: ['Grays', 'Gordons', 'Greens', 'Golds'],
-    correctAnswer: 'Grays'
+    choices: ['Gray\'s', 'Gordon\'s', 'Green\'s', 'Gold\'s'],
+    correctAnswer: 'Gray\'s'
   }, {
     question: 'What year do Marty and Doc travel to in Back to the Future 3?',
     choices: ['1865', '1875', '1885', '1905'],
@@ -200,7 +200,7 @@ function correctAnswers () {
     //enables "forward" button to click to next question
     $('#next').prop('disabled', false);
 
-      if (a === 1) {
+      if (a === 19) {
 //create "see results" button on the last question screen set event
 //listener so that when "see results" button is clicked, clickResults function runs
         let $nextButton = $('#next');
@@ -241,7 +241,7 @@ function clickResults () {
   console.log(score);
   let $scoreDiv = $('<div>');
   $scoreDiv.attr('id', 'score');
-  $scoreDiv.text(`You Got ${score} Out Of ${questionCounter}!`);
+  $scoreDiv.text(`You Got ${score} Out Of 20!`);
   let $playAgain = $('<button>');
   $playAgain.html('Go Back To The Future And Try Again!')
   $playAgain.attr('id', 'play-again');
