@@ -104,13 +104,13 @@ function loadTitle () {
   $subhead.appendTo('.title-screen');
   let $poster = $('<img id = "poster">');
   $poster.appendTo('.title-screen');
-  let $footer = $('<footer>');
-  $footer.appendTo('.title-screen');
   let $start = $('<button>');
   $start.addClass('start');
-  $start.appendTo('footer');
-  let $buttonImage = $('<img>', {class: 'start-button'});
-  $buttonImage.appendTo('.start');
+  $start.text('Start!');
+  $start.appendTo('.title-screen');
+  // let $buttonText = $('<h3>', {class: 'start-button'});
+  // $buttonText.text('Start!');
+  // $buttonImage.appendTo('.start');
 
 }
 
