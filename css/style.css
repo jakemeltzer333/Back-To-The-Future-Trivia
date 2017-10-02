@@ -8,11 +8,12 @@ body {
   min-height: 100vh;
   }
 
-.title-screen, #answers {
+.title-screen, #question-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh;
 }
 
 .header {
@@ -34,8 +35,9 @@ body {
   background-image: url('../bttfposter.jpg');
   height: 60vh;
   width: 60vw;
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   padding: 10px;
 }
 
@@ -45,6 +47,7 @@ body {
   font-family: 'Monoton', cursive;
   font-size: 20px;
   color: #0000CD;
+  margin: 25px;
 }
 
 ol {
@@ -116,4 +119,16 @@ li {
   font-size: 40px;
   font-family: 'Monoton', cursive;
   background-color: #DB1818;
+}
+
+@media screen and (max-height: 700px) and (min-width: 350px) {
+  #poster {
+    background-image: url('../bttfposter.jpg');
+    height: 60vh;
+    width: 80vw;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 10px;
+  }
 }

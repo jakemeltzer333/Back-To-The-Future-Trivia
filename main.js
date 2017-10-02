@@ -102,7 +102,7 @@ function loadTitle () {
   $header.appendTo('.title-screen');
   let $subhead = $('<h2>');
   $subhead.addClass('subhead');
-  $subhead.text('Where You\'re Going, You Won\'t Need Roads, Just Knowledge!')
+  $subhead.text('Where You\'re Going, You Don\'t Need Roads, Just Knowledge!')
   $subhead.appendTo('.title-screen');
   let $poster = $('<div id = "poster">');
   $poster.appendTo('.title-screen');
@@ -124,6 +124,8 @@ function clickStart () {
 
 //create question screen
 function setGame () {
+    let $questionContainer = $('<div>');
+    $questionContainer.attr('id', 'question-container');
     let $questionDiv = $('<div>');
     $questionDiv.attr('id', 'question');
     let $answerDiv = $('<div>');
@@ -137,11 +139,12 @@ function setGame () {
     $nextButton.text('Forward!');
     $nextButton.on('click', nextQuestion);
 
-    $questionDiv.appendTo('#container');
-    $answerDiv.appendTo('#container');
+    $questionContainer.appendTo('#container');
+    $questionDiv.appendTo('#question-container');
+    $answerDiv.appendTo('#question-container');
     $answerList.appendTo('#answers');
     $nextButton.appendTo('#answers');
-    $answerDisplay.appendTo('#container');
+    $answerDisplay.appendTo('#question-container');
 
 
 //Allow '#next' button to be disabled until an answer is clicked
@@ -197,7 +200,7 @@ function correctAnswers () {
     //enables "forward" button to click to next question
     $('#next').prop('disabled', false);
 
-      if (a === 2) {
+      if (a === 1) {
 //create "see results" button on the last question screen set event
 //listener so that when "see results" button is clicked, clickResults function runs
         let $nextButton = $('#next');
