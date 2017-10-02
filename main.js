@@ -189,11 +189,9 @@ function correctAnswers () {
       if (txt === questions[a].correctAnswer) {
         console.log(score);
         score++;
-        let $greatScott = $('<img src="https://fontmeme.com/permalink/170713/ed064265069424468ecf3747bbdce20f.png" alt="back-to-the-future-font" border="0">')
-        $('#answer-display').html($greatScott);
+        $('#answer-display').text('Great Scott, You\'re Right!');
       } else {
-        let $helloMcfly = $('<img src="https://fontmeme.com/permalink/170713/5d64ad88f0589b049dcec156f4e6fba3.png" alt="back-to-the-future-font" border="0">')
-        $('#answer-display').html($helloMcfly);
+        $('#answer-display').text('Uh, Hello? McFly? You\'re Wrong!');
       }
 
     //enables "forward" button to click to next question

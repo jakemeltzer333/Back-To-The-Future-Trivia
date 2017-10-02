@@ -20,7 +20,7 @@ body {
   background-repeat: none;
 } */
 
-.title-screen, #question-container {
+.title-screen, #answers {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -88,16 +88,21 @@ li {
   font-family: 'Bangers', cursive;
   font-size: 50px;
   color: #0000CD;
-  position: relative;
-  left: 500px;
   cursor: default;
 }
 
+#answer0:hover, #answer1:hover, #answer2:hover, #answer3:hover {
+  background-color: #DB1818;
+}
+
 #answer-display {
-  display: block;
   padding: 20px;
-  position: relative;
-  left: 300px;
+  font-family: 'Monoton', cursive;
+  font-size: 45px;
+  text-align: center;
+  display: block;
+  color: #0000CD;
+  text-shadow: 1px 1px #DB1818;
 }
 
 #next {
