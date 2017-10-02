@@ -243,10 +243,10 @@ function clickResults () {
   $scoreDiv.attr('id', 'score');
   $scoreDiv.text(`You Got ${score} Out Of ${questionCounter}!`);
   let $playAgain = $('<button>');
-  $playAgain.html('Go Back To The Future!')
+  $playAgain.html('Go Back To The Future And Try Again!')
   $playAgain.attr('id', 'play-again');
 
-  $scoreDiv.appendTo('#container');
+  $scoreDiv.appendTo('#question-container');
   $playAgain.appendTo('#score');
 
   restartGame();
