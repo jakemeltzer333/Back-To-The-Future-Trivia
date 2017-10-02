@@ -244,7 +244,7 @@ function clickResults () {
   $playAgain.attr('id', 'play-again');
 
   $scoreDiv.appendTo('#container');
-  $playAgain.appendTo('#container');
+  $playAgain.appendTo('#score');
 
   restartGame();
 }
