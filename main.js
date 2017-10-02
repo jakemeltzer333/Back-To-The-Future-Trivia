@@ -201,7 +201,7 @@ function correctAnswers () {
 //create "see results" button on the last question screen set event
 //listener so that when "see results" button is clicked, clickResults function runs
         let $nextButton = $('#next');
-        $nextButton.html('<img class = "see-results" src="https://fontmeme.com/permalink/170713/8ec3a4efc62dd0ca6572cf7bfba1ea20.png" alt="back-to-the-future-font" border="0">');
+        $nextButton.text('See Results!');
         $nextButton.off('click', nextQuestion);
         $nextButton.click(clickResults);
         $nextButton.attr('id', 'result-button');
