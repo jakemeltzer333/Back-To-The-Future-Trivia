@@ -110,9 +110,6 @@ function loadTitle () {
   $start.addClass('start');
   $start.text('Start!');
   $start.appendTo('.title-screen');
-  // let $buttonText = $('<h3>', {class: 'start-button'});
-  // $buttonText.text('Start!');
-  // $buttonImage.appendTo('.start');
 
 }
 
