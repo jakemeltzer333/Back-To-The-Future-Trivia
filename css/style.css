@@ -67,6 +67,7 @@ li {
   justify-content: center;
   text-align: center;
   margin-top: 20px;
+  text-shadow: 1px 1px #DB1818;
 }
 
 #answer-list {
@@ -74,6 +75,7 @@ li {
   font-size: 50px;
   color: #0000CD;
   cursor: pointer;
+  text-shadow: 1px 1px #DB1818;
 }
 
 #answer0:hover, #answer1:hover, #answer2:hover, #answer3:hover {
@@ -109,6 +111,7 @@ li {
   font-size: 40px;
   color: #0000CD;
   text-shadow: 1px 1px #DB1818;
+  padding: 15px;
 }
 
 #play-again {
@@ -121,7 +124,12 @@ li {
   background-color: #DB1818;
 }
 
-@media screen and (max-height: 700px) and (min-width: 350px) {
+@media screen and (max-width: 500px) {
+
+  .header {
+    text-align: center;
+  }
+
   #poster {
     background-image: url('../bttfposter.jpg');
     height: 60vh;
@@ -130,5 +138,14 @@ li {
     background-repeat: no-repeat;
     background-position: center center;
     padding: 10px;
+  }
+
+  .start {
+    padding: 10px;
+    background-color: #DB1818;
+    font-family: 'Monoton', cursive;
+    font-size: 30px;
+    color: #0000CD;
+    margin: 25px;
   }
 }
