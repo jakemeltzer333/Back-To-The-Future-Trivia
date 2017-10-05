@@ -143,9 +143,9 @@ function setGame () {
     $questionDiv.appendTo('#question-container');
     $answerDiv.appendTo('#question-container');
     $answerList.appendTo('#answers');
-    $nextButton.appendTo('#answers');
     $answerDisplay.appendTo('#question-container');
-
+    $nextButton.appendTo('#answers');
+    
 
 //Allow '#next' button to be disabled until an answer is clicked
 
