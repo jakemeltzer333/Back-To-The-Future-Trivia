@@ -163,6 +163,7 @@ function createQuestions () {
       console.log('button removed');
     } else {
       $('#question').text(questions[q].question);
+      $('.correct-answer').remove();
     }
 }
 
@@ -197,8 +198,10 @@ function correctAnswers () {
         $('#answer-display').text('Uh, Hello? McFly? You\'re Wrong!');
         let $correctAnswer = $('<span>');
         $correctAnswer.addClass('correct-answer');
-        $correctAnswer.text(`The correct answer is ${questions[a].correctAnswer}!`);
         $correctAnswer.appendTo('#question-container');
+        for (let i = 0; i < questions.length; i ++) {
+          $correctAnswer.text(`The correct answer is ${questions[a].correctAnswer}!`);
+        }
       }
 
     //enables "forward" button to click to next question
