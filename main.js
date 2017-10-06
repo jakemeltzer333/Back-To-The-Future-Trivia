@@ -195,6 +195,10 @@ function correctAnswers () {
         $('#answer-display').text('Great Scott, You\'re Right!');
       } else {
         $('#answer-display').text('Uh, Hello? McFly? You\'re Wrong!');
+        let $correctAnswer = $('<span>');
+        $correctAnswer.addClass('correct-answer');
+        $correctAnswer.text(`The correct answer is ${questions[a].correctAnswer}!`);
+        $correctAnswer.appendTo('#question-container');
       }
 
     //enables "forward" button to click to next question
